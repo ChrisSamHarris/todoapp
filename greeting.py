@@ -5,7 +5,7 @@ def greet():
     if dt[-2:] == "AM":
         time_greet = "Good Morning"
     elif dt[-2:] == "PM":
-        time_greet = "Good Evening"
+        time_greet = "Good Afternoon"
     print(f"\n{time_greet}. It is {dt}.\n")
 
 
