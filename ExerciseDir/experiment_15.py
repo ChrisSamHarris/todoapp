@@ -1,3 +1,5 @@
+# Standard modules can be found here: https://docs.python.org/3/py-modindex.html
+
 user_choice = input("Which exercise?\n")
 
 match user_choice:
