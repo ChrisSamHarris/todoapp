@@ -12,3 +12,4 @@ def greet():
 # print(f"Todays date: {dt}")
 if __name__ == "__main__":
     greet()
+    # controls the execution of this script so the function dont automatically run with main.py

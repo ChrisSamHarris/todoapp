@@ -1,9 +1,1 @@
-Study Python
-Read
-Get Aws Sa Professional
-Single Line Testing Task Baby
-Another Testing Task
 Make Soup
-Test Functions
-Test New Function
-Test Another Intertwined Function
