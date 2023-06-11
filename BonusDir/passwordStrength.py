@@ -22,7 +22,7 @@ result['uppercase'] = contains_up
 print(result)
 print(result.values())
 print(result.keys())
-# print(all(result))
+print(all(result.values()))
 
 if all(result.values()):
     print('Strong Password!')

@@ -10,5 +10,5 @@ new_filenames = []
 filenames = [file.replace('.','-')+'.txt' for file in filenames]
 print(filenames)
 
-new = [i for i in ['a', 'b']]
+new = [i for i in ['a', 'b', 'c', 'd']]
 print(new)

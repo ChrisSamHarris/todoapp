@@ -13,7 +13,7 @@ print(content)
 #     print(file.read())
 #    
 
-date = input("Enter today's date: ")
+date = input("Enter today's date (DD-MM-YY): ")
 mood = input('How would you rate your mood today from 1-10? ')
 thoughts = input('Let your thoughts flow:\n')
 
