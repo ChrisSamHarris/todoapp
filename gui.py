@@ -12,6 +12,7 @@ window = pg.Window('My TODO Application',
 
 while True: 
     event, values = window.read()
+    # Output can be broken down due to data being a dictionary: ('Add', {'user_todo': 'test2'})
     print(event)
     print(values)
     print(window.read())
