@@ -170,8 +170,6 @@ while True:
 
                 functions.write_todos(todos)
 
-                todos = functions.read_todos()
-
                 todo_list = [str(item[:-1]) for item in todos]
                 print(f"TODO '{edit_todo}' replaced with '{new_todo[:-1]}'.\n\nCurrent TODO list: " + " | ".join(todo_list) + "\n")
 

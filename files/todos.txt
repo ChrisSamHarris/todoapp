@@ -1,12 +1,4 @@
 Study Python
-Read
+test
 Get Aws Sa Professional
-Single Line Testing Task Baby
-Another Testing Task
-Make Soup
-Test Functions
-Test New Function
-Test Another Intertwined Function
-GUI Test
-Input clear test 
-Test Window.Read()
+ß
