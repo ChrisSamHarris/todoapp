@@ -25,6 +25,7 @@ while True:
             new_todo = values['user_todo'] + '\n'
             todo_list.append(new_todo.title().strip())
             functions.write_todos(todo_list)
+            window['todo_edit'].update(values=todo_list)
         case "Edit":
             todo_list = functions.read_todos()
             todo_to_edit = values['todo_edit'][0]
@@ -35,7 +36,9 @@ while True:
             print(todo_list)
 
             functions.write_todos(todo_list)
-
+            window['todo_edit'].update(values=todo_list)
+        case "todo_edit":
+            window['user_todo'].update(value=values['todo_edit'][0])
         case pg.WIN_CLOSED:
             break
 
