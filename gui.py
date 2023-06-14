@@ -35,9 +35,9 @@ while True:
             raw_index = todo_list.index(todo_to_edit)
 
             new_todo = values['user_todo']
-            print(f'New TODO = \'{new_todo}\', replaces {todo_list[raw_index]}.')
+            # print(f'New TODO = \'{new_todo}\', replaces {todo_list[raw_index]}.')
             todo_list[raw_index] = new_todo.title().strip() + '\n'
-            print(f'todo_list = {todo_list}')
+            # print(f'todo_list = {todo_list}')
 
             functions.write_todos(todo_list)
 
