@@ -15,30 +15,37 @@ window = pg.Window('My TODO Application',
 while True: 
     event, values = window.read()
     # Output can be broken down due to data being a dictionary: ('Add', {'user_todo': 'test2'})
-    print(1, event)
-    print(2, values)
-    # print(window.read())
-    print(3, values['todo_edit'])
+    # print(1, window.read()) -> DO NOT USE this is a blocking operation that waits for an event to occur so you would have to click 'Edit' twice for example - When window.read() is called, it pauses the execution of your program and waits for one of these events to happen.
+    print(2, event)
+    print(3, values)
+    # print(4, values['todo_edit'])
     match event:
         case "Add":
             todo_list = functions.read_todos()
-            new_todo = values['user_todo'] + '\n'
-            todo_list.append(new_todo.title().strip())
+            new_todo = values['user_todo'] 
+            todo_list.append(new_todo.title().strip()+ '\n')
             functions.write_todos(todo_list)
+
             window['todo_edit'].update(values=todo_list)
+
         case "Edit":
             todo_list = functions.read_todos()
+
             todo_to_edit = values['todo_edit'][0]
             raw_index = todo_list.index(todo_to_edit)
 
-            new_todo = values['user_todo']+'\n'
-            todo_list[raw_index] = new_todo.title().strip()
-            print(todo_list)
+            new_todo = values['user_todo']
+            # print(f'New TODO = \'{new_todo}\', replaces {todo_list[raw_index]}.')
+            todo_list[raw_index] = new_todo.title().strip() + '\n'
+            # print(f'todo_list = {todo_list}')
 
             functions.write_todos(todo_list)
+
             window['todo_edit'].update(values=todo_list)
+
         case "todo_edit":
             window['user_todo'].update(value=values['todo_edit'][0])
+            
         case pg.WIN_CLOSED:
             break
 
