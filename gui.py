@@ -10,7 +10,7 @@ edit_button = pg.Button("Edit")
 window = pg.Window('My TODO Application',
                     layout=[[label], [input_box, add_button], [list_box, edit_button]], 
                     font=('Helvetica', 20))
-# laout needs to go into another set of square [] brackets -> Layout expects a list of list(s) (further lists to be used as arguments): Inner square brackets will be placed in one row (each row needs a square bracket)
+# layout needs to go into another set of square [] brackets -> Layout expects a list of list(s) (further lists to be used as arguments): Inner square brackets will be placed in one row (each row needs a square bracket)
 
 while True: 
     event, values = window.read()
@@ -45,6 +45,7 @@ while True:
 
         case "todo_edit":
             window['user_todo'].update(value=values['todo_edit'][0])
+            #widgets can be accessed with window['<WIDGET_KEY>'] -> Values can be updated using the ".update(values=<NEW_VAL>)" method
             
         case pg.WIN_CLOSED:
             break
