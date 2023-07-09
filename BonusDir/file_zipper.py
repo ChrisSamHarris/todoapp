@@ -1,5 +1,5 @@
 import PySimpleGUI as pg
-import file_zipper as fzip
+import zip_creator as fzip
 
 label1 = pg.Text("Select files to compress:")
 input1 = pg.Input()
