@@ -7,11 +7,13 @@ pg.theme('Dark Amber')
 label_dt = pg.Text(time.strftime("%b %d, %Y %H:%M"), key='clock')
 label = pg.Text("Type in a TODO:")
 input_box = pg.InputText(tooltip="Enter TODO", key="user_todo", do_not_clear=False)
-add_button = pg.Button("Add")
+# add_button = pg.Button("Add")
+add_button = pg.Button(size=4, image_source="./files/add.png", mouseover_colors="LightBlue2", tooltip="Add Todo", key="Add")
 list_box = pg.Listbox(values=functions.read_todos(), key='todo_edit', enable_events=True, size=[45, 10])
 
 edit_button = pg.Button("Edit")
-complete_button = pg.Button("Complete")
+# complete_button = pg.Button("Complete")
+complete_button = pg.Button(size=4, image_source="./files/complete.png", mouseover_colors="LightBlue2", tooltip="Complete Todo", key="Complete")
 exit_button = pg.Button("Exit")
 
 window = pg.Window('My TODO Application',
@@ -44,8 +46,9 @@ while True:
                 todo_to_edit = values['todo_edit'][0]
                 raw_index = todo_list.index(todo_to_edit)
                 new_todo = values['user_todo']
-                # print(f'New TODO = \'{new_todo}\', replaces {todo_list[raw_index]}.')
                 todo_list[raw_index] = new_todo.title().strip() + '\n'
+
+                # print(f'New TODO = \'{new_todo}\', replaces {todo_list[raw_index]}.')
                 # print(f'todo_list = {todo_list}')
 
                 functions.write_todos(todo_list)
