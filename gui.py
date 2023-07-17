@@ -1,6 +1,13 @@
 import functions
 import PySimpleGUI as pg
 import time
+import os
+
+
+if not os.path.exists("./todos.txt"):
+    with open("./todos.txt") as file:
+        pass
+
 
 pg.theme('Dark Amber')
 
@@ -69,8 +76,8 @@ while True:
                 todos.remove(todo_to_complete)
                 functions.write_todos(todos)
                 window['todo_edit'].update(values=todos)
-                window['user_todo'].update(values='')
-                print(f"\'{todo_to_complete}\' successfully removed from TODO list.")
+                # window['user_todo'].update(values='')
+                print(f"\'{todo_to_complete[-1]}\' successfully removed from TODO list.")
             
             except IndexError:
                 pg.popup("Please select an item first!", font=("Helvetica", 20))
