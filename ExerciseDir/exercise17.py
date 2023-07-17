@@ -1,14 +1,17 @@
 import PySimpleGUI as pg
 
+pg.theme('Black')
+
 feet_label = pg.Text("Enter Feet:")
 feet_input_box = pg.InputText(tooltip="Enter Feet", key="user_feet")
 inch_label = pg.Text("Enter Inches:")
 inch_input_box = pg.InputText(tooltip="Enter Inches", key="user_inches")
 convert_button = pg.Button("Convert")
+exit_button = pg.Button("Exit")
 
 output_label = pg.Text(key="output")
 
-layout = [[feet_label, feet_input_box], [inch_label, inch_input_box], [convert_button, output_label]]
+layout = [[feet_label, feet_input_box], [inch_label, inch_input_box], [convert_button, exit_button, output_label]]
 
 window = pg.Window('Converter',
                     layout=layout, 
@@ -28,6 +31,9 @@ while True:
 
             window["output"].update(value=f"{meters} meters")
             print(meters)
+
+        case "Exit":
+            break
 
         case pg.WIN_CLOSED:
             break
