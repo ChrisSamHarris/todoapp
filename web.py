@@ -19,7 +19,7 @@ st.title("My TODO App")
 st.write("This is an Application designed to increase your productivity.")
 
 for index, todo in enumerate(todo_list):
-    checkbox = st.checkbox(todo, key=todo[:-1])
+    checkbox = st.checkbox(todo, key=todo)
     if checkbox:
         print(index, todo)
         todo_list.pop(index)
@@ -32,5 +32,5 @@ st.text_input(label='new_todo', label_visibility='hidden',  key='new_todo', plac
 print(st.session_state)
 
 # item needs a key in order to display in the session state
-st.session_state
+# st.session_state
 
