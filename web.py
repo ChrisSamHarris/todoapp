@@ -2,9 +2,12 @@
 import functions
 import streamlit as st
 # https://docs.streamlit.io/library/cheatsheet#build-chat-based-apps
-
+# further streamlit pages can be added e.g. Pages/About.py -> This will automatically bring in another web page and sidebar 
 
 todo_list = functions.read_todos()
+
+# st.set_page_config(layout="wide")
+
 def add_todo():
     # session_state = Almost a dictionary of data - useful for debugging
     new_todo = st.session_state["new_todo"]
@@ -16,7 +19,8 @@ def add_todo():
 #     completed_todo = 
 
 st.title("My TODO App")
-st.write("This is an Application designed to increase your productivity.")
+# html is only allowed for the write method of streamlit
+st.write("This is an Application designed to increase your <br>productivity</b>.", unsafe_allow_html=True)
 
 for index, todo in enumerate(todo_list):
     checkbox = st.checkbox(todo, key=todo)
