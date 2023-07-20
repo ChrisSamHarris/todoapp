@@ -1,5 +1,5 @@
 # Organising the code into Modules.
-persistent_filepath = "files/todos.txt"
+persistent_filepath = "SupportingFiles/todos.txt"
 
 def read_todos(filepath=persistent_filepath):
     """Reads the existing/persistant TODO file and updates the variable"""
